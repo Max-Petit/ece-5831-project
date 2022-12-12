@@ -10,7 +10,8 @@ from tensorflow.keras import layers
 
 TRAIN_PATH = "./input/sign-language-mnist/sign_mnist_train/sign_mnist_train.csv"
 TEST_PATH = "./input/sign-language-mnist/sign_mnist_test/sign_mnist_test.csv"
-LABEL_LIST =['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+#j and z are skipped as they require motion
+LABEL_LIST =['a','b','c','d','e','f','g','h','i','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y']
 
 class Asl:
     def __init__(self):
@@ -121,6 +122,6 @@ class Asl:
     
     # show asl chart to check if prediciton was correct
     def show_asl_chart(self):
-        img = plt.imread("asl_lookup.png")
+        img = plt.imread("./input/sign-language-mnist/amer_sign2.png")
         plt.imshow(img)
 
